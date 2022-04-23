@@ -1,0 +1,59 @@
+# description: grabs eth/btc price ticker from coingecko API
+import textwrap
+
+from pycoingecko import CoinGeckoAPI
+import PySimpleGUI as sg
+import time
+
+
+cg = CoinGeckoAPI()
+c_price = cg.get_price(ids='bitcoin,ethereum', vs_currencies='usd, cad')
+
+
+def ethusd():
+    eth_price_usd = c_price['ethereum']['usd']
+    time.sleep(1)
+    print(eth_price_usd)
+    return eth_price_usd
+
+def ethcad():
+    eth_price_cad = c_price['ethereum']['cad']
+    time.sleep(1)
+    return eth_price_cad
+
+def btcusd():
+    btc_price_usd = c_price['bitcoin']['usd']
+    time.sleep(1)
+    return btc_price_usd
+
+def btccad():
+    btc_price_cad = c_price['bitcoin']['cad']
+    time.sleep(1)
+    return btc_price_cad
+
+def btc_eth_ratio():
+    pass
+
+
+
+
+
+
+
+sg.theme('DarkBlue')
+layout = [
+[sg.T('ETHEREUM USD',text_color='green'),sg.T(key='-ethusd-', text_color='green')],
+[sg.T('ETHEREUM CAD',text_color='green'),sg.T(key='-ethcad-',text_color='green')],
+[sg.T('BITCOIN USD',text_color='yellow'),sg.T(key='-btcusd-',text_color='yellow')],
+[sg.T('BITCOIN CAD',text_color='yellow'),sg.T(key='-btccad-',text_color='yellow')],
+[sg.T('BTC/ETH RATIO'),sg.T(key='-btcethratio-')],
+]
+window = sg.Window('CRYPTO PRICES', layout,no_titlebar=False, alpha_channel=1, grab_anywhere=True,finalize=True)
+
+
+while True:
+    event, values = window.read(timeout=100)
+    if event == sg.WIN_CLOSED:
+        break
+    window['-ethusd-'].update(cg.get_price(ids='bitcoin,ethereum', vs_currencies='usd, cad'))
+    time.sleep(1)
