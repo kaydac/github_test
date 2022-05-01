@@ -41,8 +41,8 @@ if z >= 4:
 
 elif z == 1:
     print("You Chose ADDITION ")
-    x=float(input("Enter First Number:"))
-    y=float(input("Enter Second Number:"))
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
     if x|y < 0:
             print('invalid input try again')
 
@@ -51,8 +51,8 @@ elif z == 1:
 
 elif z == 2:
     print("You Chose SUBTRACTION ")
-    x=float(input("Enter First Number:"))
-    y=float(input("Enter Second Number:"))
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
     if x|y < 0:
             print('invalid input try again')
 
@@ -63,8 +63,8 @@ elif z == 2:
 
 elif z == 3:
     print("You Chose MULTIPLICATION ")
-    x=float(input("Enter First Number:"))
-    y=float(input("Enter Second Number:"))
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
     if x | y < 0:
             print('invalid input try again')
 
