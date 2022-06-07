@@ -1,0 +1,46 @@
+
+
+def add(*args):
+    return x+y
+
+def subtract(*args):
+    return x-y
+
+def multiply(*args):
+    return x*y
+
+def divide(*args):
+    return x/y
+
+
+print("Enter number of what you want to do")
+print("1.Add" "\n" "2.Subtract" "\n" "3.Multiply" "\n" "4.divide")
+z=int(input("Enter Here:"))
+
+
+if z >= 5:
+    print("invalid option")
+
+if z == 1:
+    print("You Chose ADDITION ")
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
+    print(add(x,y))
+
+if z == 2:
+    print("You Chose SUBTRACTION ")
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
+    print(subtract(x,y))
+
+if z == 3:
+    print("You Chose MULTIPLICATION ")
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
+    print(multiply(x,y))
+
+if z == 4:
+    print("You Chose DIVISION ")
+    x=int(input("Enter First Number:"))
+    y=int(input("Enter Second Number:"))
+    print(divide(x,y))
